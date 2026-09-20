@@ -49,8 +49,7 @@ if (heroRule && heroTagline) {
 // Gallery & Signage tickers — continuous one-directional loop (two identical
 // tracks; the second picks up exactly where the first ends, so it reads as
 // an unbroken circle rather than a start-to-end-and-back oscillation).
-// Pauses on hover via CSS. Skipped entirely for prefers-reduced-motion.
-const tickerReduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+// The signage ticker is intentionally always active on every viewport.
 const TICKER_PX_PER_SECOND = 65;
 
 const debounce = (fn, delay) => {
@@ -71,10 +70,7 @@ const setupTicker = (ticker) => {
   // the loop point since the animation travels exactly -100% of the track.
   const measure = () => {
     const trackWidth = track.getBoundingClientRect().width;
-    if (tickerReduceMotion) {
-      ticker.classList.remove('is-animating');
-      return;
-    }
+    if (trackWidth <= 0) return;
     ticker.style.setProperty('--ticker-duration', `${trackWidth / TICKER_PX_PER_SECOND}s`);
     ticker.classList.add('is-animating');
   };
@@ -86,10 +82,8 @@ const setupTicker = (ticker) => {
   });
 };
 
-['galleryTicker', 'signageTicker'].forEach((id) => {
-  const ticker = document.getElementById(id);
-  if (ticker) setupTicker(ticker);
-});
+const signageTicker = document.getElementById('signageTicker');
+if (signageTicker) setupTicker(signageTicker);
 
 // Inquiry form — submits to Formspree once index.html's form action has a
 // real form ID; falls back to a demo message if it still says YOUR_FORM_ID.
