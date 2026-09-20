@@ -485,9 +485,6 @@ section { padding: var(--gap-section) 0; }
 .ticker.is-animating .ticker-track {
   animation: ticker-loop var(--ticker-duration, 24s) linear infinite;
 }
-.ticker:hover .ticker-track {
-  animation-play-state: paused;
-}
 
 .insta-collage {
   display: grid;
@@ -542,9 +539,6 @@ section { padding: var(--gap-section) 0; }
 @keyframes ticker-loop {
   from { transform: translateX(0) translateZ(0); }
   to { transform: translateX(-100%) translateZ(0); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .ticker.is-animating .ticker-track { animation: none; }
 }
 
 /* ---------- Social ---------- */
