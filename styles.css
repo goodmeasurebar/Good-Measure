@@ -469,7 +469,7 @@ section { padding: var(--gap-section) 0; }
 }
 .ticker {
   display: flex;
-  gap: 1.75rem;
+  gap: 0;
   width: max-content;
 }
 .ticker-track {
@@ -477,6 +477,7 @@ section { padding: var(--gap-section) 0; }
   gap: 1.75rem;
   flex: none;
   width: max-content;
+  padding-right: 1.75rem;
   will-change: transform;
   backface-visibility: hidden;
   transform: translateZ(0);
