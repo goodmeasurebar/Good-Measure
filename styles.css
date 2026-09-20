@@ -516,7 +516,8 @@ section { padding: var(--gap-section) 0; }
 .signage-item img {
   width: 300px;
   height: 360px;
-  object-fit: cover;
+  object-fit: contain;
+  background: var(--cream);
   border-radius: 4px;
   border: 1px solid var(--line);
   display: block;
