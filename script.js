@@ -71,7 +71,7 @@ const setupTicker = (ticker) => {
   // the loop point since the animation travels exactly -100% of the track.
   const measure = () => {
     const trackWidth = track.getBoundingClientRect().width;
-    if (tickerReduceMotion || trackWidth <= wrap.clientWidth) {
+    if (tickerReduceMotion) {
       ticker.classList.remove('is-animating');
       return;
     }
