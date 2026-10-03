@@ -160,7 +160,7 @@ a { color: inherit; }
   overflow: hidden;
   padding: clamp(4rem, 8vw, 7rem) 0;
   background:
-    radial-gradient(circle at 18% 22%, rgba(239, 201, 200, 0.72), transparent 34%),
+    radial-gradient(circle at 25% 50%, rgba(239, 201, 200, 0.72) 0%, rgba(239, 201, 200, 0.48) 24%, transparent 52%),
     linear-gradient(135deg, var(--cream) 0%, #fffaf6 58%, var(--cream-deep) 100%);
 }
 .hero::after {
