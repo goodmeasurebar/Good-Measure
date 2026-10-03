@@ -1300,3 +1300,73 @@ textarea { resize: vertical; min-height: 110px; }
   .signage-item img { width: 220px; height: 264px; }
   .insta-collage { grid-template-columns: repeat(2, 1fr); gap: 0.7rem; }
 }
+
+/* ---------- Mobile polish for editorial layout ---------- */
+@media (max-width: 560px) {
+  .hero { padding: 3rem 0 3.5rem; }
+  .hero-inner { gap: 1.8rem; }
+  .hero-title { font-size: clamp(2.8rem, 14vw, 4rem); line-height: 0.94; }
+  .hero-intro { font-size: 0.98rem; line-height: 1.6; }
+  .hero-actions { width: 100%; gap: 0.65rem; }
+  .hero-actions .btn { flex: 1 1 100%; justify-content: center; }
+  .credential-badge { max-width: 30ch; line-height: 1.45; }
+
+  .social-editorial .section-head h2,
+  .services-editorial .section-head h2,
+  .menu-editorial .section-head h2,
+  .packages-editorial .section-head h2,
+  .signage-editorial .section-head h2,
+  .faq-editorial .section-head h2 {
+    font-size: clamp(2.35rem, 11vw, 3.2rem);
+    line-height: 0.98;
+  }
+  .social-editorial .social-list-double { grid-template-columns: 1fr; }
+  .social-editorial .social-item { padding: 1.35rem; }
+
+  .about-editorial .about-lede {
+    font-size: clamp(2.25rem, 11vw, 3.25rem);
+    line-height: 1.02;
+  }
+  .about-editorial::after { font-size: 28vw; }
+
+  .services-editorial .service-row { padding: 1.4rem; border-radius: 15px; }
+  .services-editorial .service-num { margin-bottom: 1.8rem; }
+  .services-editorial .service-body h3 { font-size: 1.75rem; }
+  .service-tags span { display: inline; }
+
+  .menu-editorial .menu-card { padding: 1.5rem; }
+  .menu-editorial .menu-card::before { inset: 8px; }
+  .menu-editorial .menu-columns { gap: 2rem; }
+  .menu-editorial .menu-col:last-child { padding-left: 0; }
+
+  .packages-editorial .package-col { padding: 1.5rem; border-radius: 15px; }
+  .packages-editorial .package-price { font-size: 3.25rem; }
+  .packages-editorial .package-included > div { padding: 1.4rem; border-radius: 15px; }
+
+  .signage-editorial .ticker-wrap {
+    margin-left: calc(-1 * clamp(1.25rem, 4vw, 2.5rem));
+    margin-right: calc(-1 * clamp(1.25rem, 4vw, 2.5rem));
+  }
+  .signage-editorial .signage-note { font-size: 1.25rem; }
+
+  .faq-editorial .faq-item { padding: 1.35rem 0; }
+  .faq-editorial .faq-item summary { font-size: 1.15rem; line-height: 1.35; }
+  .faq-editorial .faq-item summary::after { width: 1.8rem; height: 1.8rem; flex-basis: 1.8rem; }
+
+  .contact-editorial .contact-info h2 {
+    max-width: none;
+    font-size: clamp(2.8rem, 13vw, 4rem);
+  }
+  .contact-editorial .form-grid {
+    grid-template-columns: 1fr;
+    padding: 1.35rem;
+  }
+  .contact-editorial .form-grid .full,
+  .contact-editorial .form-note { grid-column: 1; }
+  .contact-editorial input,
+  .contact-editorial select,
+  .contact-editorial textarea {
+    font-size: 16px;
+  }
+  .contact-editorial .btn { width: 100%; }
+}
